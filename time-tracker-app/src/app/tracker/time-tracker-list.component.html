@@ -1,0 +1,40 @@
+<div class="container">
+  <div >
+          <label for="name">Email</label>
+          <input type="email" name="email" [(ngModel)] ="email">
+          <button type="submit" class="btn btn-success" (click)="submit()">Submit</button>
+        </div>
+  
+   </div>
+  <div class='panel panel-primary'>
+      <div class='panel-heading'>
+        {{pageTitle}}
+      </div>
+     
+      <div class='panel-body'>
+          
+   <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+          <div class='table-responsive'>
+              <table class='table' *ngIf ='empTimeTracks && empTimeTracks.length' >
+                  <thead>
+                      <tr>
+                        
+                          <th>Start Time</th>
+                          <th>End Time</th>
+                          <th>Email</th>
+                          
+                      </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor='let empTimeTrack of empTimeTracks'>
+                          
+                          <td>{{empTimeTrack.start}}</td>
+                          <td>{{empTimeTrack.end}}</td>
+                          <td>{{empTimeTrack.email}}</td>
+                          
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>

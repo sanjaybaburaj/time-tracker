@@ -1,0 +1,28 @@
+
+
+
+
+<div class="container" align="left">
+    
+ <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+ <div class='has-error' *ngIf='msgAlert'>{{msgAlert}}</div>
+      <div class="form-group" style="width:50%">
+        <label for="email">Email</label>
+        <input type="text"  class="form-control" id="name" required [(ngModel)] ="emptimetrack.email">
+      </div>
+ 
+      <div class="form-group left">
+        <label for="startTime">Start Time</label>
+       <ngx-datetime-picker style="padding:1px" [(selectedDateTime)]="emptimetrack.start"></ngx-datetime-picker>
+      </div>
+
+      <div class="form-group left">
+        <label for="endTime">End Time</label>
+        <ngx-datetime-picker [(selectedDateTime)]="emptimetrack.end"></ngx-datetime-picker>
+      </div>
+ 
+ 
+      <button type="submit" class="btn btn-success" (click)="submit()">Submit</button>
+ 
+    
+</div>
